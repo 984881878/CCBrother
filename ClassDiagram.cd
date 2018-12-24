@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAboutDlg" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CC_Brother_Draw.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="baseShape" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEABAAAAAkAIAAhAAAABMAkgAQKAAgAAAAAAA=</HashCode>
+      <FileName>baseShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCBrotherCntrItem" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAAQAAAAAAOAAAgAAAACAEAAUCIAoAAQAAAAA=</HashCode>
+      <FileName>CCBrotherCntrItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCCBrotherDrawApp" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAABAAAAAAQAAAABAAAAAAA=</HashCode>
+      <FileName>CC_Brother_Draw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCCBrotherDrawDoc" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAkFIYEChAQAEgBJCAAAgBQgWTggSoYBAQBIADDgAIE=</HashCode>
+      <FileName>CC_Brother_DrawDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCCBrotherDrawView" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIRCAgpEABFDwGIxLKBSgFEgqBUwCAAlIwtMiAAQLRQ=</HashCode>
+      <FileName>CC_Brother_DrawView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_GraphPara" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQCAAAAAAAAAAAAAgAAAAAAAAICAABQCAQAAAAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_Line" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAMAAQAAAAAAAAAAAQIAAAAAAAAAA=</HashCode>
+      <FileName>CC_Brother_Line.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_PLine" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAIAAAAgAAIAAACAAAAAAAAQIAAAAAEAAAA=</HashCode>
+      <FileName>CC_Brother_PLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_Switch" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEMAAACAAAAAAADAAAiAIANAAAQIMAAAgAA4AA=</HashCode>
+      <FileName>CC_Brother_Switch.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_Text" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQCKAAAAAAAgiQEAAAAAAKAAAABAAAQICAAAAAACAA=</HashCode>
+      <FileName>CC_Brother_Text.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CC_Brother_TextDlg" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIACEAAAAAEgAAABAAAAAAAAAABQAAAAACAAABAAA=</HashCode>
+      <FileName>CC_Brother_TextDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMainFrame" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAACQAAiAAAgCAAAgAAAAAAAAAAABA=</HashCode>
+      <FileName>MainFrm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="LayerStruct" Collapsed="true">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ScreenStructForBoost" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GraphSelectStruct" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="UndoStruct" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PointStruct" Collapsed="true">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>CC_Brother_GraphPara.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
