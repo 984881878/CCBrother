@@ -11,6 +11,10 @@ class CCBrotherCntrItem :
 
 public:
 	CCBrotherCntrItem(CCCBrotherDrawDoc* pContainer = nullptr);
+	// Note: pContainer is allowed to be NULL to enable IMPLEMENT_SERIALIZE.
+	//  IMPLEMENT_SERIALIZE requires the class have a constructor with
+	//  zero arguments.  Normally, OLE items are constructed with a
+	//  non-NULL document pointer.
 	~CCBrotherCntrItem();
 	CCCBrotherDrawDoc* GetDocument();
 	CCCBrotherDrawView* GetActiveView();
