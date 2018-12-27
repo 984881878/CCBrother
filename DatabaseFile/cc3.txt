@@ -1,0 +1,64 @@
+CCBrother Database Support File For Current Document..................................
+
+LineNum:1
+TextNum:1
+SwitchNum:1
+PlineNum:1
+GroundNum:1
+
+baseShape0:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#line0:
+    startPointx:108.000000
+    startPointy:246.000000
+    endPointx:167.000000
+    endPointy:199.000000
+
+baseShape1:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text0:
+    startPointx:343.000000
+    startPointy:270.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:6
+    Content:°¢ÈøµÂ
+
+baseShape2:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch0:
+    startPointx:163.000000        startPointy:236.000000
+    NextOnex:173.000000         NextOnexy:236.000000
+    NNextOnex:183.000000      NNextOney:246.000000
+    NNNextOnex:183.000000    NNNextOney:236.000000
+    NNNNextOnex:193.000000  NNNNextOney:236.000000
+    size_Of_Switch:10
+
+baseShape3:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline0:
+    fill or not:0
+    vertexs of pline:5
+    type of the components connect with this pline(one side):0
+    type of the components connect with this pline(another side):0
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:238.000000        vertex0 positiony:133.000000
+    vertex1 positionx:406.000000        vertex1 positiony:165.000000
+    vertex2 positionx:158.000000        vertex2 positiony:167.000000
+    vertex3 positionx:393.000000        vertex3 positiony:53.000000
+    vertex4 positionx:538.000000        vertex4 positiony:146.000000
+
+baseShape4:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground0:
+    startPointx:185.00                   startPointy:155.00
+    NextOnex:195.00                    NextOnexy:155.00
+    NNextOnex:195.00                  NNextOney:165.00
+    NNNextOnex:195.00               NNNextOney:155.00
+    NNNNextOnex:205.00             NNNNextOney:155.00
+    NNNNNextOnex:190.00          NNNNNextOney:152.00
+    NNNNNNextOnex:200.00        NNNNNNextOney:152.00
+    NNNNNNNextOnex:192.50     NNNNNNNextOney:149.00
+    NNNNNNNNextOnex:197.50  NNNNNNNNextOney:149.00
+    size_Of_Ground:10
+

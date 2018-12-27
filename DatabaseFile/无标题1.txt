@@ -1,0 +1,63 @@
+CCBrother Database Support File..................................
+
+LineNum:1
+TextNum:1
+SwitchNum:1
+PlineNum:1
+GroundNum:1
+
+baseShape0:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#line0:
+    startPointx:98.000000
+    startPointy:319.000000
+    endPointx:171.000000
+    endPointy:287.000000
+
+baseShape1:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text0:
+    startPointx:174.000000
+    startPointy:315.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:6
+    Content:°¢ÈøµÂ
+
+baseShape2:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch0:
+    startPointx:58.000000        startPointy:266.000000
+    NextOnex:68.000000         NextOnexy:266.000000
+    NNextOnex:78.000000      NNextOney:276.000000
+    NNNextOnex:78.000000    NNNextOney:266.000000
+    NNNNextOnex:88.000000  NNNNextOney:266.000000
+    size_Of_Switch:10
+
+baseShape3:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline0:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):0
+    type of the components connect with this pline(another side):0
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:143.000000        vertex0 positiony:217.000000
+    vertex1 positionx:258.000000        vertex1 positiony:249.000000
+    vertex2 positionx:153.000000        vertex2 positiony:233.000000
+    vertex3 positionx:305.000000        vertex3 positiony:184.000000
+
+baseShape4:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground0:
+    startPointx:99.000000                startPointy:220.000000
+    NextOnex:109.000000                 NextOnexy:220.000000
+    NNextOnex:109.000000              NNextOney:230.000000
+    NNNextOnex:109.000000            NNNextOney:220.000000
+    NNNNextOnex:119.000000          NNNNextOney:220.000000
+    NextOnex:104.000000                 NextOnexy:217.000000
+    NNextOnex:114.000000              NNextOney:217.000000
+    NNNextOnex:106.500000            NNNextOney:214.000000
+    NNNNextOnex:111.500000          NNNNextOney:214.000000
+    size_Of_Switch:10
+

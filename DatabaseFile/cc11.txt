@@ -1,0 +1,161 @@
+CCBrother Database Support File For Current Document..................................
+
+Drawing board information for current document:
+    Origin Point X:59.93    Origion Point Y:59.93
+    blc(Parameter for logical point mapping to device point):0.51
+    BackgroundColor:00ff80
+    LineType:1
+    LineWide:1
+    CurrentLayer:0
+
+Overview about this document:
+    LineNum:6
+    TextNum:1
+    SwitchNum:4
+    PlineNum:3
+    GroundNum:1
+
+Detail informations:
+baseShape0:  PenColor:8000ff  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#line0:
+    startPointx:199.000000
+    startPointy:292.000000
+    endPointx:254.000000
+    endPointy:271.000000
+
+baseShape1:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:0  Delete:0
+-->>children#line1:
+    startPointx:290.000000
+    startPointy:297.000000
+    endPointx:443.000000
+    endPointy:237.000000
+
+baseShape2:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:1  Delete:0
+-->>children#line2:
+    startPointx:378.000000
+    startPointy:311.000000
+    endPointx:464.000000
+    endPointy:109.000000
+
+baseShape3:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:1  Delete:0
+-->>children#line3:
+    startPointx:380.000000
+    startPointy:228.000000
+    endPointx:493.000000
+    endPointy:282.000000
+
+baseShape4:  PenColor:400080  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:2  Delete:0
+-->>children#line4:
+    startPointx:291.000000
+    startPointy:255.000000
+    endPointx:342.000000
+    endPointy:164.000000
+
+baseShape5:  PenColor:400080  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:2  Delete:0
+-->>children#line5:
+    startPointx:335.000000
+    startPointy:244.000000
+    endPointx:290.000000
+    endPointy:157.000000
+
+baseShape6:  PenColor:8000ff  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text0:
+    startPointx:468.000000
+    startPointy:206.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:6
+    Content:°¢ÈøµÂ
+
+baseShape7:  PenColor:8000ff  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch0:
+    startPointx:75.000000        startPointy:233.000000
+    NextOnex:85.000000         NextOnexy:233.000000
+    NNextOnex:95.000000      NNextOney:243.000000
+    NNNextOnex:95.000000    NNNextOney:233.000000
+    NNNNextOnex:105.000000  NNNNextOney:233.000000
+    size_Of_Switch:10
+
+baseShape8:  PenColor:ff0000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch1:
+    startPointx:205.000000        startPointy:127.000000
+    NextOnex:215.000000         NextOnexy:127.000000
+    NNextOnex:225.000000      NNextOney:137.000000
+    NNNextOnex:225.000000    NNNextOney:127.000000
+    NNNNextOnex:235.000000  NNNNextOney:127.000000
+    size_Of_Switch:10
+
+baseShape9:  PenColor:400080  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:1  Delete:0
+-->>children#switch2:
+    startPointx:358.000000        startPointy:145.000000
+    NextOnex:368.000000         NextOnexy:145.000000
+    NNextOnex:378.000000      NNextOney:155.000000
+    NNNextOnex:378.000000    NNNextOney:145.000000
+    NNNNextOnex:388.000000  NNNNextOney:145.000000
+    size_Of_Switch:10
+
+baseShape10:  PenColor:400080  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:1  Delete:0
+-->>children#switch3:
+    startPointx:237.000000        startPointy:315.000000
+    NextOnex:247.000000         NextOnexy:315.000000
+    NNextOnex:257.000000      NNextOney:325.000000
+    NNNextOnex:257.000000    NNNextOney:315.000000
+    NNNNextOnex:267.000000  NNNNextOney:315.000000
+    size_Of_Switch:10
+
+baseShape11:  PenColor:ff0000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline0:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):1
+    vertex0 positionx:237.000000        vertex0 positiony:315.000000
+    vertex1 positionx:227.000000        vertex1 positiony:315.000000
+    vertex2 positionx:227.000000        vertex2 positiony:145.000000
+    vertex3 positionx:358.000000        vertex3 positiony:145.000000
+
+baseShape12:  PenColor:8000ff  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline1:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):1
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:388.000000        vertex0 positiony:145.000000
+    vertex1 positionx:398.000000        vertex1 positiony:145.000000
+    vertex2 positionx:398.000000        vertex2 positiony:315.000000
+    vertex3 positionx:266.000000        vertex3 positiony:315.000000
+
+baseShape13:  PenColor:400080  ColorBrush:000000  LineWide:1.000000  LineType:1  Layer:0  id_only:1  Delete:0
+-->>children#pline2:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):3
+    the index of the components stored on array(which kind and which one):2
+    vertex0 positionx:75.000000        vertex0 positiony:233.000000
+    vertex1 positionx:65.000000        vertex1 positiony:233.000000
+    vertex2 positionx:65.000000        vertex2 positiony:127.000000
+    vertex3 positionx:205.000000        vertex3 positiony:127.000000
+
+baseShape14:  PenColor:8000ff  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground0:
+    startPointx:358.00                   startPointy:189.00
+    NextOnex:368.00                    NextOnexy:189.00
+    NNextOnex:368.00                  NNextOney:199.00
+    NNNextOnex:368.00               NNNextOney:189.00
+    NNNNextOnex:378.00             NNNNextOney:189.00
+    NNNNNextOnex:363.00          NNNNNextOney:186.00
+    NNNNNNextOnex:373.00        NNNNNNextOney:186.00
+    NNNNNNNextOnex:365.50     NNNNNNNextOney:183.00
+    NNNNNNNNextOnex:370.50  NNNNNNNNextOney:183.00
+    size_Of_Ground:10
+

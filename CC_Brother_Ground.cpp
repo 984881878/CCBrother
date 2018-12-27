@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "CC_Brother_Ground.h"
 #include "CC_Brother_GraphPara.h"
+#include "CC_Brother_DrawDoc.h"
+
+extern int groundCount;
 
 
 extern void  DeviceP_To_LogicalP(float x, float y, int *X, int *Y); //设备坐标点映射到逻辑坐标点 P代表Point
@@ -176,5 +179,140 @@ void CC_Brother_Ground::Serialize(CArchive & ar)
 	{
 		ar >> X >> Y >> X1 >> Y1 >> X2 >> Y2 >> X3 >> Y3 >> X4 >> Y4 >> X5 >> Y5 >> X6 >> Y6 >> X7 >> Y7 >> X8 >> Y8;
 		ar >> size_Of_Ground;
+	}
+}
+
+void CC_Brother_Ground::Save(CFile* file, CStdioFile* file1, BOOL Yn)
+{
+	baseShape::Save(file, file1, Yn);
+	if (Yn)
+	{
+		file->Write((unsigned char *)&X, sizeof(X));
+		file->Write((unsigned char *)&Y, sizeof(Y));
+		file->Write((unsigned char *)&X1, sizeof(X1));
+		file->Write((unsigned char *)&Y1, sizeof(Y1));
+		file->Write((unsigned char *)&X2, sizeof(X2));
+		file->Write((unsigned char *)&Y2, sizeof(Y2));
+		file->Write((unsigned char *)&X3, sizeof(X3));
+		file->Write((unsigned char *)&Y3, sizeof(Y3));
+		file->Write((unsigned char *)&X4, sizeof(X4));
+		file->Write((unsigned char *)&Y4, sizeof(Y4));
+		file->Write((unsigned char *)&X5, sizeof(X5));
+		file->Write((unsigned char *)&Y5, sizeof(Y5));
+		file->Write((unsigned char *)&X6, sizeof(X6));
+		file->Write((unsigned char *)&Y6, sizeof(Y6));
+		file->Write((unsigned char *)&X7, sizeof(X7));
+		file->Write((unsigned char *)&Y7, sizeof(Y7));
+		file->Write((unsigned char *)&X8, sizeof(X8));
+		file->Write((unsigned char *)&Y8, sizeof(Y8));
+		file->Write((unsigned char *)&size_Of_Ground, sizeof(size_Of_Ground));
+
+		CString tmp;
+		tmp.Empty();
+		tmp.Format(_T("-->>children#ground%d:\n"), groundCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointx:%.2f        "), X);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("           startPointy:%.2f\n"), Y);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NextOnex:%.2f         "), X1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("           NextOnexy:%.2f\n"), Y1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NNextOnex:%.2f         "), X2);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("         NNextOney:%.2f\n"), Y2);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NNNextOnex:%.2f       "), X3);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("        NNNextOney:%.2f\n"), Y3);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NNNNextOnex:%.2f       "), X4);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("      NNNNextOney:%.2f\n"), Y4);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NNNNNextOnex:%.2f     "), X5);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("     NNNNNextOney:%.2f\n"), Y5);
+		file1->WriteString(tmp);
+
+		tmp.Empty();
+		tmp.Format(_T("    NNNNNNextOnex:%.2f    "), X6);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    NNNNNNextOney:%.2f\n"), Y6);
+		file1->WriteString(tmp);
+
+		tmp.Empty();
+		tmp.Format(_T("    NNNNNNNextOnex:%.2f   "), X7);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  NNNNNNNextOney:%.2f\n"), Y7);
+		file1->WriteString(tmp);
+
+		tmp.Empty();
+		tmp.Format(_T("    NNNNNNNNextOnex:%.2f  "), X8);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("NNNNNNNNextOney:%.2f\n"), Y8);
+		file1->WriteString(tmp);
+
+		tmp.Empty();
+		tmp.Format(_T("    size_Of_Ground:%d\n\n"), size_Of_Ground);
+		file1->WriteString(tmp);
+
+		/*file1->Write((unsigned char *)&X, sizeof(X));
+		file1->Write((unsigned char *)&Y, sizeof(Y));
+		file1->Write((unsigned char *)&X1, sizeof(X1));
+		file1->Write((unsigned char *)&Y1, sizeof(Y1));
+		file1->Write((unsigned char *)&X2, sizeof(X2));
+		file1->Write((unsigned char *)&Y2, sizeof(Y2));
+		file1->Write((unsigned char *)&X3, sizeof(X3));
+		file1->Write((unsigned char *)&Y3, sizeof(Y3));
+		file1->Write((unsigned char *)&X4, sizeof(X4));
+		file1->Write((unsigned char *)&Y4, sizeof(Y4));
+		file1->Write((unsigned char *)&X5, sizeof(X5));
+		file1->Write((unsigned char *)&Y5, sizeof(Y5));
+		file1->Write((unsigned char *)&X6, sizeof(X6));
+		file1->Write((unsigned char *)&Y6, sizeof(Y6));
+		file1->Write((unsigned char *)&X7, sizeof(X7));
+		file1->Write((unsigned char *)&Y7, sizeof(Y7));
+		file1->Write((unsigned char *)&X8, sizeof(X8));
+		file1->Write((unsigned char *)&Y8, sizeof(Y8));
+		file1->Write((unsigned char *)&size_Of_Ground, sizeof(size_Of_Ground));*/
+	}
+	else
+	{
+		file->Read((unsigned char *)&X, sizeof(X));
+		file->Read((unsigned char *)&Y, sizeof(Y));
+		file->Read((unsigned char *)&X1, sizeof(X1));
+		file->Read((unsigned char *)&Y1, sizeof(Y1));
+		file->Read((unsigned char *)&X2, sizeof(X2));
+		file->Read((unsigned char *)&Y2, sizeof(Y2));
+		file->Read((unsigned char *)&X3, sizeof(X3));
+		file->Read((unsigned char *)&Y3, sizeof(Y3));
+		file->Read((unsigned char *)&X4, sizeof(X4));
+		file->Read((unsigned char *)&Y4, sizeof(Y4));
+		file->Read((unsigned char *)&X5, sizeof(X5));
+		file->Read((unsigned char *)&Y5, sizeof(Y5));
+		file->Read((unsigned char *)&X6, sizeof(X6));
+		file->Read((unsigned char *)&Y6, sizeof(Y6));
+		file->Read((unsigned char *)&X7, sizeof(X7));
+		file->Read((unsigned char *)&Y7, sizeof(Y7));
+		file->Read((unsigned char *)&X8, sizeof(X8));
+		file->Read((unsigned char *)&Y8, sizeof(Y8));
+		file->Read((unsigned char *)&size_Of_Ground, sizeof(size_Of_Ground));
 	}
 }

@@ -18,7 +18,8 @@ public:
 	void setText(CString TextContent);
 	void setID(int id);
 	void updateColor(long color);
-	void prepare(int id,long color);
+	void prepare(int id, long color/*, short curLayer*/);
+	void setCurLayre(short layre);
 	/*void setAllmember(long ColorPen, long ColorBrush, float LineWide, short LineType, short Layer, int id_only, BOOL Delete,
 		float m_xStart, float m_yStart, float m_angle1, float m_angle2, float m_TextHeight, float m_TextWide, float m_cellWide,
 		unsigned char m_TextFont, CString m_Text);*/
@@ -29,7 +30,7 @@ public:
 	virtual bool PointIsCount(float x, float y, float validDistance, float blc);
 	virtual PointStruct GetPoint(char c);
 	virtual void Serialize(CArchive& ar);
-	virtual void Save(CFile* file, BOOL Yn);
+	virtual void Save(CFile* file, CStdioFile* file1, BOOL Yn);
 
 //区别于父类的特有参数
 protected:

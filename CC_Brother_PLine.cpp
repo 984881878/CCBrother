@@ -4,6 +4,8 @@
 #include "CC_Brother_Switch.h"
 #include "CC_Brother_DrawDoc.h"
 
+extern int plineCount;
+
 extern void  DeviceP_To_LogicalP(float x, float y, int *X, int *Y); //设备坐标点映射到逻辑坐标点 P代表Point
 extern void  LogicalP_To_DeviceP(int x, int y, float *X, float*Y);
 extern int   DeviceL_To_LogicalL(float length);     //设备上的长度转换为逻辑长度 L代表length
@@ -44,6 +46,16 @@ void CC_Brother_PLine::LineFromSwitchToSwitch(CCCBrotherDrawDoc* pDoc, short int
 	{
 		shape0 = pDoc->GetGraph(Lb0, Index0);
 		shape1 = pDoc->GetGraph(Lb1, Index1);
+	}
+	if (!shape0 || !shape1)
+	{
+		b_Delete = 1;
+		return;
+	}
+	if ((shape0 && shape0->IsDelete()) || (shape1 && shape1->IsDelete()))        //&&为短路运算符  当左边为假时  右边的都不用判断了 直接返回false
+	{
+		b_Delete = 1;
+		return;
 	}
 	CC_Brother_Switch* g0 = (CC_Brother_Switch*)shape0;
 	CC_Brother_Switch* g1 = (CC_Brother_Switch*)shape1;
@@ -285,23 +297,74 @@ void CC_Brother_PLine::Serialize(CArchive& ar)
 	}
 }
 
-void CC_Brother_PLine::Save(CFile* file, BOOL Yn)
+void CC_Brother_PLine::Save(CFile* file, CStdioFile* file1, BOOL Yn)
 {
 	int i;
-	baseShape::Save(file, Yn);
+	baseShape::Save(file, file1, Yn);
 	if (Yn)
 	{
 		file->Write((unsigned char *)&b_fill, sizeof(b_fill));
 		file->Write((unsigned char *)&m_Number, sizeof(m_Number));
+		file->Write((unsigned char *)&Lb0, sizeof(Lb0));
+		file->Write((unsigned char *)&Lb1, sizeof(Lb1));
+		file->Write((unsigned char *)&Index0, sizeof(Index0));
+		file->Write((unsigned char *)&Index1, sizeof(Index1));
 		for (i = 0; i < m_Number; i++)
 		{
 			file->Write((unsigned char *)&m_PointList[i], sizeof(m_PointList[i]));
 		}
+
+		CString tmp;
+		tmp.Empty();
+		tmp.Format(_T("-->>children#pline%d:\n"), plineCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    fill or not:%d\n"), b_fill);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    vertexs of pline:%d\n"), m_Number);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    type of the components connect with this pline(one side):%d\n"), Lb0);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    type of the components connect with this pline(another side):%d\n"), Lb1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    the index of the components stored on array(which kind and which one):%d\n"), Index0);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    the index of the components stored on array(which kind and which one):%d\n"), Index1);
+		file1->WriteString(tmp);
+		for (i = 0; i < m_Number; i++)
+		{
+			tmp.Empty();
+			tmp.Format(_T("    vertex%d positionx:%f    "), i, m_PointList[i].x);
+			file1->WriteString(tmp);
+			tmp.Empty();
+			tmp.Format(_T("    vertex%d positiony:%f\n"), i, m_PointList[i].y);
+			file1->WriteString(tmp);
+		}
+		file1->WriteString(_T("\n"));
+		/*file1->Write((unsigned char *)&b_fill, sizeof(b_fill));
+		file1->Write((unsigned char *)&m_Number, sizeof(m_Number));
+		file1->Write((unsigned char *)&Lb0, sizeof(Lb0));
+		file1->Write((unsigned char *)&Lb1, sizeof(Lb1));
+		file1->Write((unsigned char *)&Index0, sizeof(Index0));
+		file1->Write((unsigned char *)&Index1, sizeof(Index1));
+		for (i = 0; i < m_Number; i++)
+		{
+			file1->Write((unsigned char *)&m_PointList[i], sizeof(m_PointList[i]));
+		}*/
 	}
 	else
 	{
 		file->Read((unsigned char *)&b_fill, sizeof(b_fill));
 		file->Read((unsigned char *)&m_Number, sizeof(m_Number));
+		file->Read((unsigned char *)&Lb0, sizeof(Lb0));
+		file->Read((unsigned char *)&Lb1, sizeof(Lb1));
+		file->Read((unsigned char *)&Index0, sizeof(Index0));
+		file->Read((unsigned char *)&Index1, sizeof(Index1));
 		m_PointList = new PointStruct[m_Number];
 		for (i = 0; i < m_Number; i++)
 		{

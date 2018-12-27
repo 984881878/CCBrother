@@ -1,0 +1,114 @@
+CCBrother Database Support File For Current Document..................................
+
+Drawing board information for current document:
+    Origin Point X:0.00    Origion Point Y:0.00
+    blc(Parameter for logical point mapping to device point):1.00
+    BackgroundColor:8000ff
+    LineType:0
+    LineWide:1
+    CurrentLayer:0
+
+Overview about this document:
+    LineNum:0
+    TextNum:2
+    SwitchNum:2
+    PlineNum:2
+    GroundNum:2
+
+Detail informations:
+baseShape0:  PenColor:00ff00  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text0:
+    startPointx:304.000000
+    startPointy:229.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:2
+    Content:ÍÛ
+
+baseShape1:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text1:
+    startPointx:423.000000
+    startPointy:293.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:4
+    Content:21
+
+baseShape2:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch0:
+    startPointx:87.000000        startPointy:223.000000
+    NextOnex:97.000000         NextOnexy:223.000000
+    NNextOnex:107.000000      NNextOney:233.000000
+    NNNextOnex:107.000000    NNNextOney:223.000000
+    NNNNextOnex:117.000000  NNNNextOney:223.000000
+    size_Of_Switch:10
+
+baseShape3:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch1:
+    startPointx:191.000000        startPointy:278.000000
+    NextOnex:201.000000         NextOnexy:278.000000
+    NNextOnex:211.000000      NNextOney:288.000000
+    NNNextOnex:211.000000    NNNextOney:278.000000
+    NNNNextOnex:221.000000  NNNNextOney:278.000000
+    size_Of_Switch:10
+
+baseShape4:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline0:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):1
+    vertex0 positionx:221.000000        vertex0 positiony:278.000000
+    vertex1 positionx:231.000000        vertex1 positiony:278.000000
+    vertex2 positionx:231.000000        vertex2 positiony:223.000000
+    vertex3 positionx:116.000000        vertex3 positiony:223.000000
+
+baseShape5:  PenColor:00ff00  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline1:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):1
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:87.000000        vertex0 positiony:223.000000
+    vertex1 positionx:77.000000        vertex1 positiony:223.000000
+    vertex2 positionx:77.000000        vertex2 positiony:278.000000
+    vertex3 positionx:191.000000        vertex3 positiony:278.000000
+
+baseShape6:  PenColor:00ff00  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground0:
+    startPointx:315.00                   startPointy:187.00
+    NextOnex:325.00                    NextOnexy:187.00
+    NNextOnex:325.00                  NNextOney:197.00
+    NNNextOnex:325.00               NNNextOney:187.00
+    NNNNextOnex:335.00             NNNNextOney:187.00
+    NNNNNextOnex:320.00          NNNNNextOney:184.00
+    NNNNNNextOnex:330.00        NNNNNNextOney:184.00
+    NNNNNNNextOnex:322.50     NNNNNNNextOney:181.00
+    NNNNNNNNextOnex:327.50  NNNNNNNNextOney:181.00
+    size_Of_Ground:10
+
+baseShape7:  PenColor:000000  ColorBrush:000000  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground1:
+    startPointx:128.00                   startPointy:204.00
+    NextOnex:138.00                    NextOnexy:204.00
+    NNextOnex:138.00                  NNextOney:214.00
+    NNNextOnex:138.00               NNNextOney:204.00
+    NNNNextOnex:148.00             NNNNextOney:204.00
+    NNNNNextOnex:133.00          NNNNNextOney:201.00
+    NNNNNNextOnex:143.00        NNNNNNextOney:201.00
+    NNNNNNNextOnex:135.50     NNNNNNNextOney:198.00
+    NNNNNNNNextOnex:140.50  NNNNNNNNextOney:198.00
+    size_Of_Ground:10
+

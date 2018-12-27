@@ -1,0 +1,119 @@
+CCBrother Database Support File..................................
+
+LineNum:2
+TextNum:2
+SwitchNum:2
+PlineNum:3
+GroundNum:1
+
+baseShape0:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#line0:
+    startPointx:73.000000
+    startPointy:268.000000
+    endPointx:226.000000
+    endPointy:179.000000
+
+baseShape1:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#line1:
+    startPointx:282.000000
+    startPointy:210.000000
+    endPointx:113.000000
+    endPointy:149.000000
+
+baseShape2:  PenColor:0  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text0:
+    startPointx:309.000000
+    startPointy:245.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:6
+    Content:°¢ÈøµÂ
+
+baseShape3:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#text1:
+    startPointx:391.000000
+    startPointy:332.000000
+    wordsAngle:0.000000
+    textAngle:0.000000
+    TextHeight:20.000000
+    TextWide:10.000000
+    cellWide(the distance from a words to another):1.000000
+    TextFont:0
+    TextLength:20
+    Content:°¢ÈøµÂ 2 as 1
+
+baseShape4:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch0:
+    startPointx:115.000000        startPointy:257.000000
+    NextOnex:125.000000         NextOnexy:257.000000
+    NNextOnex:135.000000      NNextOney:267.000000
+    NNNextOnex:135.000000    NNNextOney:257.000000
+    NNNNextOnex:145.000000  NNNNextOney:257.000000
+    size_Of_Switch:10
+
+baseShape5:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#switch1:
+    startPointx:76.000000        startPointy:212.000000
+    NextOnex:86.000000         NextOnexy:212.000000
+    NNextOnex:96.000000      NNextOney:222.000000
+    NNNextOnex:96.000000    NNNextOney:212.000000
+    NNNNextOnex:106.000000  NNNNextOney:212.000000
+    size_Of_Switch:10
+
+baseShape6:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline0:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):1
+    vertex0 positionx:76.000000        vertex0 positiony:212.000000
+    vertex1 positionx:66.000000        vertex1 positiony:212.000000
+    vertex2 positionx:66.000000        vertex2 positiony:257.000000
+    vertex3 positionx:115.000000        vertex3 positiony:257.000000
+
+baseShape7:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#pline1:
+    fill or not:0
+    vertexs of pline:4
+    type of the components connect with this pline(one side):3
+    type of the components connect with this pline(another side):3
+    the index of the components stored on array(which kind and which one):1
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:145.000000        vertex0 positiony:257.000000
+    vertex1 positionx:155.000000        vertex1 positiony:257.000000
+    vertex2 positionx:155.000000        vertex2 positiony:212.000000
+    vertex3 positionx:105.000000        vertex3 positiony:212.000000
+
+baseShape8:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:1  Delete:0
+-->>children#pline2:
+    fill or not:0
+    vertexs of pline:5
+    type of the components connect with this pline(one side):0
+    type of the components connect with this pline(another side):0
+    the index of the components stored on array(which kind and which one):0
+    the index of the components stored on array(which kind and which one):0
+    vertex0 positionx:323.000000        vertex0 positiony:153.000000
+    vertex1 positionx:318.000000        vertex1 positiony:223.000000
+    vertex2 positionx:359.000000        vertex2 positiony:119.000000
+    vertex3 positionx:533.000000        vertex3 positiony:153.000000
+    vertex4 positionx:328.000000        vertex4 positiony:182.000000
+
+baseShape9:  PenColor:16711935  ColorBrush:0  LineWide:1.000000  LineType:0  Layer:0  id_only:0  Delete:0
+-->>children#ground0:
+    startPointx:247.00                   startPointy:147.00
+    NextOnex:257.00                    NextOnexy:147.00
+    NNextOnex:257.00                  NNextOney:157.00
+    NNNextOnex:257.00               NNNextOney:147.00
+    NNNNextOnex:267.00             NNNNextOney:147.00
+    NNNNNextOnex:252.00          NNNNNextOney:144.00
+    NNNNNNextOnex:262.00        NNNNNNextOney:144.00
+    NNNNNNNextOnex:254.50     NNNNNNNextOney:141.00
+    NNNNNNNNextOnex:259.50  NNNNNNNNextOney:141.00
+    size_Of_Ground:10
+

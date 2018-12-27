@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "CC_Brother_Text.h"
 #include "CC_Brother_GraphPara.h"
+#include "CC_Brother_DrawDoc.h"
+
+extern int textCount;
 
 extern void  DeviceP_To_LogicalP(float x, float y, int *X, int *Y); //设备坐标点映射到逻辑坐标点 P代表Point
 extern void  LogicalP_To_DeviceP(int x, int y, float *X, float*Y);
@@ -151,10 +154,16 @@ void CC_Brother_Text::updateColor(long color)
 	m_ColorPen = color;
 }
 
-void CC_Brother_Text::prepare(int id, long color)
+void CC_Brother_Text::prepare(int id, long color/*, short curLayer*/)
 {
 	setID(id);
 	updateColor(color);
+	//m_Layer = curLayer;
+}
+
+void CC_Brother_Text::setCurLayre(short layre)
+{
+	m_Layer = layre;
 }
 
 //使用代码的方式表达数学上的方法：确定一个最小矩形，要求其能够囊括文本框
@@ -245,12 +254,48 @@ void CC_Brother_Text::Serialize(CArchive& ar)
 	}
 }
 
-void CC_Brother_Text::Save(CFile* file, BOOL Yn)
+void CC_Brother_Text::Save(CFile* file, CStdioFile* file1, BOOL Yn)
 {
-	//char *p;
-	baseShape::Save(file, Yn);
+	baseShape::Save(file, file1, Yn);
 	if (Yn)
 	{
+		CString tmp;
+		tmp.Empty();
+		tmp.Format(_T("-->>children#text%d:\n"), textCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointx:%f\n"), m_xStart);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointy:%f\n"), m_yStart);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    wordsAngle:%f\n"), m_angle1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    textAngle:%f\n"), m_angle2);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    TextHeight:%f\n"), m_TextHeight);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    TextWide:%f\n"), m_TextWide);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    cellWide(the distance from a words to another):%f\n"), m_cellWide);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    TextFont:%d\n"), m_TextFont);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    TextLength:%d\n"), m_Text.GetLength() * sizeof(TCHAR));
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp = _T("    Content:");
+		tmp += m_Text;
+		tmp += "\n\n";
+		file1->WriteString(tmp);
+
 		file->Write((unsigned char *)&m_xStart, sizeof(m_xStart));
 		file->Write((unsigned char *)&m_yStart, sizeof(m_yStart));
 		file->Write((unsigned char *)&m_angle1, sizeof(m_angle1));
@@ -259,8 +304,9 @@ void CC_Brother_Text::Save(CFile* file, BOOL Yn)
 		file->Write((unsigned char *)&m_TextWide, sizeof(m_TextWide));
 		file->Write((unsigned char *)&m_cellWide, sizeof(m_cellWide));
 		file->Write((unsigned char *)&m_TextFont, sizeof(m_TextFont));
+		m_TextLength = m_Text.GetLength() * sizeof(TCHAR);
 		file->Write((unsigned char *)&m_TextLength, sizeof(m_TextLength));
-		file->Write((unsigned char *)&m_Text, m_TextLength);
+		file->Write((LPCTSTR)m_Text.GetBuffer(m_Text.GetLength()), m_TextLength);
 	}
 	else
 	{
@@ -273,12 +319,22 @@ void CC_Brother_Text::Save(CFile* file, BOOL Yn)
 		file->Read((unsigned char *)&m_cellWide, sizeof(m_cellWide));
 		file->Read((unsigned char *)&m_TextFont, sizeof(m_TextFont));
 		file->Read((unsigned char *)&m_TextLength, sizeof(m_TextLength));
-		m_Text.Empty();
-		/*	p=new char[m_TextLong+1];
-			file->Read((unsigned char *)&p,m_TextLong);
-			CString Text(p,m_TextLong);
-			delete p;
-			c_Text=Text;*/
+		//file->Read(m_Text.GetBuffer(m_TextLength), m_TextLength);
+
+
+		wchar_t * buf = new wchar_t[m_TextLength/* + 1*/];
+		wmemset(buf, 0, m_TextLength/* + 1*/); // 注意是WMEMSET，而不是MEMSET
+		file->Read(buf, m_TextLength/* + 1*/);
+
+		m_Text = (CString)buf;
+		delete[]buf;
+
+		/*m_Text.Empty();
+		char *p =new char[m_TextLength +1];
+		file->Read((unsigned char *)&p, m_TextLength);
+		CString Text(p, m_TextLength);
+		m_Text = Text;*/
+		//delete[] p;
 	}
 }
 

@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "CC_Brother_Switch.h"
 #include "CC_Brother_GraphPara.h"
+#include "CC_Brother_DrawDoc.h"
+
+extern int switchCount;
 
 extern void  DeviceP_To_LogicalP(float x, float y, int *X, int *Y); //设备坐标点映射到逻辑坐标点 P代表Point
 extern void  LogicalP_To_DeviceP(int x, int y, float *X, float*Y);
@@ -68,9 +71,9 @@ void CC_Brother_Switch::Serialize(CArchive& ar)
 	}
 }
 
-void CC_Brother_Switch::Save(CFile* file, BOOL Yn)
+void CC_Brother_Switch::Save(CFile* file, CStdioFile* file1, BOOL Yn)
 {
-	baseShape::Save(file, Yn);
+	baseShape::Save(file, file1, Yn);
 	if (Yn)
 	{
 		file->Write((unsigned char *)&X, sizeof(X));
@@ -84,6 +87,51 @@ void CC_Brother_Switch::Save(CFile* file, BOOL Yn)
 		file->Write((unsigned char *)&X4, sizeof(X4));
 		file->Write((unsigned char *)&Y4, sizeof(Y4));
 		file->Write((unsigned char *)&size_Of_Switch, sizeof(size_Of_Switch));
+
+		CString tmp;
+		tmp.Empty();
+		tmp.Format(_T("-->>children#switch%d:\n"), switchCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointx:%f    "), X);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointy:%f\n"), Y);
+		file1->WriteString(tmp);
+		tmp.Format(_T("    NextOnex:%f    "), X1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("     NextOnexy:%f\n"), Y1);
+		file1->WriteString(tmp);
+		tmp.Format(_T("    NNextOnex:%f    "), X2);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  NNextOney:%f\n"), Y2);
+		file1->WriteString(tmp);
+		tmp.Format(_T("    NNNextOnex:%f    "), X3);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("NNNextOney:%f\n"), Y3);
+		file1->WriteString(tmp);
+		tmp.Format(_T("    NNNNextOnex:%f  "), X4);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("NNNNextOney:%f\n"), Y4);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    size_Of_Switch:%d\n\n"), size_Of_Switch);
+		file1->WriteString(tmp);
+		/*	file1->Write((unsigned char *)&X, sizeof(X));
+			file1->Write((unsigned char *)&Y, sizeof(Y));
+			file1->Write((unsigned char *)&X1, sizeof(X1));
+			file1->Write((unsigned char *)&Y1, sizeof(Y1));
+			file1->Write((unsigned char *)&X2, sizeof(X2));
+			file1->Write((unsigned char *)&Y2, sizeof(Y2));
+			file1->Write((unsigned char *)&X3, sizeof(X3));
+			file1->Write((unsigned char *)&Y3, sizeof(Y3));
+			file1->Write((unsigned char *)&X4, sizeof(X4));
+			file1->Write((unsigned char *)&Y4, sizeof(Y4));
+			file1->Write((unsigned char *)&size_Of_Switch, sizeof(size_Of_Switch));*/
 	}
 	else
 	{

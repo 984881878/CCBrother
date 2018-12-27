@@ -24,6 +24,8 @@ public:
 	void Delete(bool Is);	                                                                    //删除或恢复删除图形元素的函数
 	bool IsDelete();
 	void setColorPen(long color);
+	//BOOL getDlelete();
+	void setDelete(BOOL b);
 
 //虚函数
 public:
@@ -32,7 +34,7 @@ public:
 	virtual void GetRect(float* x1, float* y1, float* x2, float* y2) = 0;                     //获取某一个图形的矩形区域  这个矩形区域是包括该图形的最小矩形
 	virtual PointStruct GetPoint(char c) = 0;                                                            //获取图形的基点
 	virtual void Serialize(CArchive& ar);
-	virtual void Save(CFile* file, BOOL Yn);
+	virtual void Save(CFile* file, CStdioFile* file1, BOOL Yn);
 
 protected:
 	long m_ColorPen;  //笔色

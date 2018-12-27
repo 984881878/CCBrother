@@ -37,6 +37,6 @@ public:
 	virtual void GetRect(float* x1, float* y1, float* x2, float* y2);
 	virtual PointStruct GetPoint(char c);
 	virtual void Serialize(CArchive& ar);
-
+	virtual void Save(CFile* file, CStdioFile* file1, BOOL Yn);
 };
 

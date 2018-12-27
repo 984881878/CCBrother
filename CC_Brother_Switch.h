@@ -29,7 +29,7 @@ public:
 	virtual void DrawShape(CDC* pDC, int m_DrawMode, int m_DrawMode1, long BackColor);
 	virtual PointStruct GetPoint(char c);
 	virtual void Serialize(CArchive& ar);
-	virtual void Save(CFile* file, BOOL Yn);
+	virtual void Save(CFile* file, CStdioFile* file1, BOOL Yn);
 
 //区别于父类的特有参数
 protected:

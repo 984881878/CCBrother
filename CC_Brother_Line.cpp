@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "CC_Brother_Line.h"
 #include "CC_Brother_GraphPara.h"
+#include "CC_Brother_DrawDoc.h"
+
+extern int lineCount;
 
 extern void  DeviceP_To_LogicalP(float x, float y, int *X, int *Y); //设备坐标点映射到逻辑坐标点 P代表Point
 extern void  LogicalP_To_DeviceP(int x, int y, float *X, float*Y);
@@ -134,15 +137,33 @@ void CC_Brother_Line::Serialize(CArchive& ar)
 	}
 }
 
-void CC_Brother_Line::Save(CFile* file, BOOL Yn)
+void CC_Brother_Line::Save(CFile* file, CStdioFile* file1, BOOL Yn)
 {
-	baseShape::Save(file, Yn);
+	baseShape::Save(file, file1, Yn);
 	if (Yn)
 	{
+		//static int lineCount = 0;
 		file->Write((unsigned char *)&m_X1, sizeof(m_X1));
 		file->Write((unsigned char *)&m_Y1, sizeof(m_Y1));
 		file->Write((unsigned char *)&m_X2, sizeof(m_X2));
 		file->Write((unsigned char *)&m_Y2, sizeof(m_Y2));
+
+		CString tmp;
+		tmp.Empty();
+		tmp.Format(_T("-->>children#line%d:\n"), lineCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointx:%f\n"), m_X1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    startPointy:%f\n"), m_Y1);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    endPointx:%f\n"), m_X2);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("    endPointy:%f\n\n"), m_Y2);
+		file1->WriteString(tmp);
 	}
 	else
 	{
@@ -150,5 +171,9 @@ void CC_Brother_Line::Save(CFile* file, BOOL Yn)
 		file->Read((unsigned char *)&m_Y1, sizeof(m_Y1));
 		file->Read((unsigned char *)&m_X2, sizeof(m_X2));
 		file->Read((unsigned char *)&m_Y2, sizeof(m_Y2));
+		/*file1->Read((unsigned char *)&m_X1, sizeof(m_X1));
+		file1->Read((unsigned char *)&m_Y1, sizeof(m_Y1));
+		file1->Read((unsigned char *)&m_X2, sizeof(m_X2));
+		file1->Read((unsigned char *)&m_Y2, sizeof(m_Y2));*/
 	}
 }

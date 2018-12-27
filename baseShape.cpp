@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "baseShape.h"
+#include "CC_Brother_DrawDoc.h"
+
+extern int baseCount;
 
 
 baseShape::baseShape()
@@ -194,6 +197,16 @@ void baseShape::setColorPen(long color)
 	m_ColorPen = color;
 }
 
+//BOOL baseShape::getDlelete()
+//{
+//	return b_Delete;
+//}
+
+void baseShape::setDelete(BOOL b)
+{
+	b_Delete = b;
+}
+
 void baseShape::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
@@ -206,7 +219,7 @@ void baseShape::Serialize(CArchive& ar)
 	}
 }
 
-void baseShape::Save(CFile* file, BOOL Yn)
+void baseShape::Save(CFile* file, CStdioFile* file1, BOOL Yn)
 {
 	if (Yn)	//如果是在进行保存
 	{
@@ -215,7 +228,33 @@ void baseShape::Save(CFile* file, BOOL Yn)
 		file->Write((unsigned char *)&m_LineWide, sizeof(m_LineWide));
 		file->Write((unsigned char *)&m_LineType, sizeof(m_LineType));
 		file->Write((unsigned char *)&m_Layer, sizeof(m_Layer));
+		file->Write((unsigned char *)&m_id_only, sizeof(m_id_only));
 		file->Write((unsigned char *)&b_Delete, sizeof(b_Delete));
+
+		CString tmp;
+		tmp.Format(_T("baseShape%d:"), baseCount++);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  PenColor:%06x"), m_ColorPen);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  ColorBrush:%06x"), m_ColorBrush);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  LineWide:%f"), m_LineWide);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  LineType:%d"), m_LineType);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  Layer:%d"), m_Layer);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  id_only:%d"), m_id_only);
+		file1->WriteString(tmp);
+		tmp.Empty();
+		tmp.Format(_T("  Delete:%d\n"), b_Delete);
+		file1->WriteString(tmp);
 	}
 	else
 	{
@@ -224,6 +263,7 @@ void baseShape::Save(CFile* file, BOOL Yn)
 		file->Read((unsigned char *)&m_LineWide, sizeof(m_LineWide));
 		file->Read((unsigned char *)&m_LineType, sizeof(m_LineType));
 		file->Read((unsigned char *)&m_Layer, sizeof(m_Layer));
+		file->Read((unsigned char *)&m_id_only, sizeof(m_id_only));
 		file->Read((unsigned char *)&b_Delete, sizeof(b_Delete));
 	}
 }
